@@ -6,13 +6,13 @@ from PIL import Image, ImageOps
 
 
 @click.command()
-@click.argument("filename", type=click.Path(exists=True))
+@click.argument("filepath", type=click.Path(exists=True))
 @click.option("-d", "--out-dir", "output_dir", type=click.Path(), default=None)
 @click.option("-o", "--out-file", "output_filename", type=str, default=None)
 def main(
-    filename: str, output_dir: Optional[str], output_filename: Optional[str]
+    filepath: str, output_dir: Optional[str], output_filename: Optional[str]
 ) -> None:
-    filepath = Path(filename)
+    filepath = Path(filepath)
     output_dir: Path = Path.cwd() if output_dir is None else Path(output_dir)
     output_filename: Path = output_filename or f"{filepath.stem}-inverted.jpg"
 
