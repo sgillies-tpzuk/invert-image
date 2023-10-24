@@ -4,10 +4,8 @@ cwlVersion: v1.2
 class: CommandLineTool
 
 requirements:
-  InitialWorkDirRequirement:
-    listing:
-    - class: Directory
-      location: invert-image
+  DockerRequirement:
+    dockerPull: sgilliestpzuk/invert-image
 
 inputs:
   out:
@@ -25,7 +23,3 @@ outputs:
     type: File
     outputBinding:
       glob: '*.*'
-
-baseCommand:
-- python
-- invert-image
