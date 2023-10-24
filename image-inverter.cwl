@@ -8,21 +8,24 @@ requirements:
     listing:
     - class: Directory
       location: invert-image
-    - class: File
-      location: examples/reference-image.jpg
 
 inputs:
-  filepath:
-    type: string
+  out:
+    type: string?
+    inputBinding:
+      prefix: -o
+      position: 2
+  file:
+    type: File
+    inputBinding:
+      position: 1
 
 outputs:
   inverted_file:
     type: File
     outputBinding:
-      glob: reference-image-inverted.jpg
+      glob: '*.*'
 
 baseCommand:
 - python
 - invert-image
-arguments:
-- reference-image.jpg

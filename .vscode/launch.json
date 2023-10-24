@@ -18,6 +18,12 @@
       ],
       "console": "integratedTerminal",
       "justMyCode": true
+    },
+    {
+      "name": "CWL: Invert Image",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "cwl-runner image-inverter.cwl --file 'examples/reference-image.jpg' --out 'inverted-file-cwl.jpg'"
     }
   ]
 }
